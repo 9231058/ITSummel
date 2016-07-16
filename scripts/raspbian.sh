@@ -45,7 +45,7 @@ select option in "fdisk" "install-raspbian" "quit"; do
 				sudo fdisk -l $dev
 				;;
 			2)
-				sudo unzip -p raspbian-jessie-lite.zip | sudo dd of=/dev/$dev bs=32M
+				sudo unzip -p raspbian-jessie-lite.zip | sudo dd of=$dev bs=32M
 				break
 				;;
 			3)
