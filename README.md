@@ -18,3 +18,38 @@ After installation if you want you can grow your partition size:
 - Write the changes with the w option when you are sure they are correct.
 - Run fsck on the partition. `sudo e2fsck /dev/mmcblk0p2`
 - Resize partition file system. `sudo resize2fs /dev/mmcblk0p2`
+
+## DHT + Python
+For using DHT sensor with your RPi and python you must do the following things:
+1. Install GPIO library:
+
+```sh
+sudo apt-get install python-dev python-rpi.gpio
+```
+
+2. Get dht11.py file and put it next to your project. You can download it form
+[here](https://github.com/szazo/DHT11_Python), after downloading zip file of
+this project use dht11.py and you remove other files.
+
+3. After all you can write your code :)
+
+```python
+import RPi.GPIO as GPIO
+import dht11
+
+# initialize GPIO
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+GPIO.cleanup()
+
+# read data using pin 14
+# [you connect data pin of dht sensor to GPIO13 of RPi]
+instance = dht11.DHT11(pin = 14)
+result = instance.read()
+
+if result.is_valid():
+    print("Temperature: %d C" % result.temperature)
+    print("Humidity: %d %%" % result.humidity)
+else:
+    print("Error: %d" % result.error_code)
+```
