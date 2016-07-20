@@ -1,7 +1,7 @@
 # ITSummEL
 ## Introduction
 Story of our works in IoT Academy in [ITRC](http://itrc.ac.ir) at Summer 2016.
-## Steps
+## Examples :)
 ### RPi Configuration
 For installing Lamp-RPi on RPi (Automated):
 
@@ -19,7 +19,7 @@ After installation if you want you can grow your partition size:
 - Run fsck on the partition. `sudo e2fsck /dev/mmcblk0p2`
 - Resize partition file system. `sudo resize2fs /dev/mmcblk0p2`
 
-## DHT + Python
+### DHT + Python
 For using DHT sensor with your RPi and python you must do the following things:
 1. Install GPIO library:
 
