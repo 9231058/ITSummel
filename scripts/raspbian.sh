@@ -8,18 +8,18 @@
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
 download=true
-if [ -f raspbian-jessie-lite.zip ]; then
+if [ -f raspbian-jessie.zip ]; then
 	read -p "Do you want to redownload raspbian ?[Y/n] " -n 1 redownload; echo
 	if [[ $redownload == "Y" ]]; then
 		download=true
-		rm rasbian-jessie-lite.zip
+		rm rasbian-jessie.zip
 	else
 		download=false
 	fi
 fi
 if $download ; then
 	echo "Downloading raspbian ..."
-	curl --progress-bar --location https://downloads.raspberrypi.org/raspbian_lite_latest -o raspbian-jessie-lite.zip
+	curl --progress-bar --location https://downloads.raspberrypi.org/raspbian_latest -o raspbian-jessie.zip
 	if [[ $? -eq 0 ]]; then
 		echo "Download has been successful"
 	else
@@ -45,7 +45,7 @@ select option in "fdisk" "install-raspbian" "quit"; do
 				sudo fdisk -l $dev
 				;;
 			2)
-				sudo unzip -p raspbian-jessie-lite.zip | sudo dd of=$dev bs=32M
+				sudo unzip -p raspbian-jessie.zip | sudo dd of=$dev bs=32M
 				break
 				;;
 			3)
