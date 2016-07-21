@@ -1,6 +1,8 @@
 # ITSummEL
 ## Introduction
 Story of our works in IoT Academy in [ITRC](http://itrc.ac.ir) at Summer 2016.
+## RPi Pinout
+For detail of RPi pins and it's functionalities see [this](https://pinout.xyz/)
 ## Examples :)
 ### RPi Configuration
 For installing Lamp-RPi on RPi (Automated):
