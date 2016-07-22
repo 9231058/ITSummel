@@ -23,5 +23,5 @@ try:
         GPIO.output(15, False)
         time.sleep(1)
 except KeyboardInterrupt:
-    GPIO.output(15, True)
+    GPIO.output(15, False)
     print("Thank you for using us :)")
