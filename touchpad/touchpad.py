@@ -8,7 +8,6 @@
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
 import RPi.GPIO as GPIO
-import time
 
 # Setup library configuration
 GPIO.setmode(GPIO.BCM)
@@ -18,7 +17,7 @@ GPIO.setwarnings(False)
 GPIO.setup(15, GPIO.IN)
 try:
     while True:
-        print(GPIO.input(15))
-        time.sleep(0.5)
+        GPIO.wait_for_edge(15, GPIO.RISING)
+        print("Someone touched me :(")
 except KeyboardInterrupt:
     print("Thank you for using 18.20 :)")
