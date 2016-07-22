@@ -20,7 +20,9 @@ try:
         try:
             GPIO.wait_for_edge(15, GPIO.RISING)
         except RuntimeError:
-            break
+            pass
         print("Someone touched me :(")
+except KeyboardInterrupt:
+    pass
 finally:
     print("Thank you for using 18.20 :)")
