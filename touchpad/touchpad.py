@@ -17,7 +17,10 @@ GPIO.setwarnings(False)
 GPIO.setup(15, GPIO.IN)
 try:
     while True:
-        GPIO.wait_for_edge(15, GPIO.RISING)
+        try:
+            GPIO.wait_for_edge(15, GPIO.RISING)
+        except RuntimeError:
+            break
         print("Someone touched me :(")
-except KeyboardInterrupt:
+finally:
     print("Thank you for using 18.20 :)")
