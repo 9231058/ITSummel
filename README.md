@@ -1,6 +1,8 @@
 # ITSummEL
 ## Introduction
 Story of our works in IoT Academy in [ITRC](http://itrc.ac.ir) at Summer 2016.
+## Useful Links
+[Reading Analogue Sensors With One GPIO Pin](http://www.raspberrypi-spy.co.uk/2012/08/reading-analogue-sensors-with-one-gpio-pin/)
 ## RPi Pinout
 For detail of RPi pins and it's functionalities see [this](https://pinout.xyz/)
 ## Examples :)
