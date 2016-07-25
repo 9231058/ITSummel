@@ -19,11 +19,14 @@ GPIO.setup(15, GPIO.IN)
 t = 0
 try:
     while True:
-            if(GPIO.input(15)):
+            if (not GPIO.input(15)):
                 t += 0.5
             else:
-                print(t)
+                if (t > 0):
+                    print(t)
                 t = 0
             time.sleep(0.5)
+except KeyboardInterrupt:
+    pass
 finally:
     print("Thank you for using 18.20 :)")
