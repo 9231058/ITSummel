@@ -8,6 +8,7 @@
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
 import RPi.GPIO as GPIO
+import requests
 
 # Setup library configuration
 GPIO.setmode(GPIO.BCM)
@@ -22,6 +23,7 @@ try:
         except RuntimeError:
             pass
         print("Someone touched me :(")
+        requests.get('http://thingtalk.ir/update', data={'key': '4W8IN7UU92XNWKWQ', 'field1': '1'})
 except KeyboardInterrupt:
     pass
 finally:
