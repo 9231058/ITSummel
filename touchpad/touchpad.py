@@ -14,11 +14,11 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Trun GPIO15 on
-GPIO.setup(15, GPIO.IN)
+GPIO.setup(14, GPIO.IN)
 try:
     while True:
         try:
-            GPIO.wait_for_edge(15, GPIO.RISING)
+            GPIO.wait_for_edge(14, GPIO.RISING)
         except RuntimeError:
             pass
         print("Someone touched me :(")
