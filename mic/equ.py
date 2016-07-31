@@ -1,14 +1,13 @@
 import RPi.GPIO as GPIO
 import time
+import spidev
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-
-import spidev
 
 # Open SPI bus 0 for device 0
 spi = spidev.SpiDev()
 spi.open(0, 0)
-
 
 def ReadChannel(channel: int) -> int:
     '''
