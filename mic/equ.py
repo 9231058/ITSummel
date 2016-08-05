@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import RPi.GPIO as GPIO
 import time
 import spidev
@@ -9,7 +10,7 @@ GPIO.setwarnings(False)
 spi = spidev.SpiDev()
 spi.open(0, 0)
 
-def ReadChannel(channel: int) -> int:
+def ReadChannel(channel):
     '''
     Function to read SPI data from MCP3008 chip
     channel must be integer between 0 and 7
