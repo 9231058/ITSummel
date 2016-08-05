@@ -62,4 +62,14 @@ For using microphone we must use ADC for analog to digital converting,
 we use MCP3208 chip as our ADC, MCP3208 has SPI interface and we connect
 it to our RPi use follwing diagram.
 ![MCP3208 to RPi](https://cdn.rawgit.com/1995parham/ITSummel/master/mic/schema/Mic.jpg)
+
+| Purpose | Color  |
+|:------- |:------:|
+| VCC     | Red    |
+| Ground  | Black  |
+| SCLK    | Orange |
+| CS      | Yellow |
+| MISO    | Green  |
+| MOSI    | Blue   |
+
 After all you can find some good example in `/mic/`.
