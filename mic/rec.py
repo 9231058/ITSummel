@@ -2,6 +2,8 @@
 import RPi.GPIO as GPIO
 import time
 import spidev
+import wave
+import struct
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -31,13 +33,16 @@ voice_channel = 0
 
 # Define delay between readings
 delay = 0.1
-wav = open('sound.wav', 'w')
+sound = wave.open('sound.wav', 'w')
+sound.setnchannels(1)
+sound.setsampwidth(2)
+sound.setframerate(10)
 
 try:
     while True:
         voice_level = ReadChannel(voice_channel)
         time.sleep(delay)
         print(voice_level)
-        wav.write(bytes(voice_level))
+        sound.writeframes(struct.pack('h', voice_level))
 except KeyboardInterrupt:
-    wav.close()
+    sound.close()
