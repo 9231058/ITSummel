@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 import spidev
+import struct
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -38,6 +39,6 @@ try:
         voice_level = ReadChannel(voice_channel)
         time.sleep(delay)
         print(voice_level)
-        wav.write(bytes(voice_level))
+        wav.write(struct.pack('!i', voice_level))
 except KeyboardInterrupt:
     wav.close()
