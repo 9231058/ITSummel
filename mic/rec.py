@@ -12,7 +12,6 @@ GPIO.setwarnings(False)
 spi = spidev.SpiDev()
 spi.open(0, 0)
 
-
 def ReadChannel(channel):
     '''
     Function to read SPI data from MCP3008 chip
@@ -21,7 +20,6 @@ def ReadChannel(channel):
     adc = spi.xfer2([1, (8+channel) << 4, 0])
     data = ((adc[1] & 3) << 8) + adc[2]
     return data
-
 
 # Function to convert data to voltage level,
 # rounded to specified number of decimal places.
@@ -34,17 +32,17 @@ def ConvertVolts(data, places):
 voice_channel = 0
 
 # Define delay between readings
-delay = 0.1
+delay = 0.001
 sound = wave.open('sound.wav', 'w')
 sound.setnchannels(1)
-sound.setsampwidth(2)
-sound.setframerate(10)
+sound.setsampwidth(1)
+sound.setframerate(1000)
 
 try:
     while True:
-        voice_level = ReadChannel(voice_channel)
+        voice_level = (ReadChannel(voice_channel) / 8) + 1
         time.sleep(delay)
         print(voice_level)
-        sound.writeframes(struct.pack('h', voice_level))
+        sound.writeframes(struct.pack('B', voice_level))
 except KeyboardInterrupt:
     sound.close()
