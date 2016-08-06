@@ -4,6 +4,7 @@ Story of our works in IoT Academy in [ITRC](http://itrc.ac.ir) at Summer 2016.
 ## Useful Links
 [Reading Analogue Sensors With One GPIO Pin](http://www.raspberrypi-spy.co.uk/2012/08/reading-analogue-sensors-with-one-gpio-pin/)
 [Useful Fritzing Components](https://github.com/nkolban/fritzing)
+[Windows 10 on RPi](http://lifehacker.com/get-started-with-windows-10-iot-on-the-raspberry-pi-wit-1733056763)
 ## RPi Pinout
 For detail of RPi pins and it's functionalities see [this](https://pinout.xyz/)
 ## Examples :)
