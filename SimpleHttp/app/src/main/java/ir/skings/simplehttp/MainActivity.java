@@ -92,7 +92,12 @@ public class MainActivity extends AppCompatActivity {
                 String input = br.readLine();
                 // thing talk json maker
                 ThingTalkJSON ttj = new ThingTalkJSON(input);
-                st = (String) ttj.getFeeds().get(ttj.getFeeds().size() - 1).get("field1");
+                if(ttj.getFeeds().size() > 0) {
+                    st = (String) ttj.getFeeds().get(ttj.getFeeds().size() - 1).get("field1");
+                }else {
+                    Log.d("SKings", "channel is empty");
+                    st = "";
+                }
                 Log.d("SKings",st);
 
 
@@ -156,7 +161,12 @@ public class MainActivity extends AppCompatActivity {
                     // thing talk json maker
                     ThingTalkJSON ttj = new ThingTalkJSON(input);
                     // set ledstat in read mode
-                    ledStat = Integer.parseInt((String) ttj.getFeeds().get(ttj.getFeeds().size() - 1).get("field1"));
+                    if(ttj.getFeeds().size() > 0) {
+                        ledStat = Integer.parseInt((String) ttj.getFeeds().get(ttj.getFeeds().size() - 1).get("field1"));
+                    }else {
+                        Log.d("SKings","channel is empty");
+                        ledStat = 0;
+                    }
                     Log.d("SKings",ledStat + "");
 
                     br.close();
