@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ModuleAsyncTask mat;
     private LedAsyncTask lat;
     private int ledStat;
+    private Timer t ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Check for new amount of module
         //Declare the timer
-        Timer t = new Timer();
+        t = new Timer();
         //Set the schedule function and rate
         t.scheduleAtFixedRate(new TimerTask() {
                                   @Override
@@ -71,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
                 0,
                 //Set the amount of time between each execution (in milliseconds)
                 1000);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        t.cancel();
     }
 
     private class ModuleAsyncTask extends AsyncTask<String,Integer,Double>{
