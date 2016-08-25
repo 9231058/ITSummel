@@ -32,17 +32,17 @@ def ConvertVolts(data, places):
 voice_channel = 0
 
 # Define delay between readings
-delay = 0.1
+delay = 0.001
 sound = wave.open('sound.wav', 'w')
 sound.setnchannels(1)
-sound.setsampwidth(2)
-sound.setframerate(10)
+sound.setsampwidth(1)
+sound.setframerate(1000)
 
 try:
     while True:
-        voice_level = ReadChannel(voice_channel)
+        voice_level = (ReadChannel(voice_channel) / 8) + 1
         time.sleep(delay)
         print(voice_level)
-        sound.writeframes(struct.pack('h', voice_level))
+        sound.writeframes(struct.pack('B', voice_level))
 except KeyboardInterrupt:
     sound.close()
