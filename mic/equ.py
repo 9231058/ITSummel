@@ -10,6 +10,7 @@ GPIO.setwarnings(False)
 spi = spidev.SpiDev()
 spi.open(0, 0)
 
+
 def ReadChannel(channel):
     '''
     Function to read SPI data from MCP3008 chip
