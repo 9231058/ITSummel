@@ -8,11 +8,14 @@
 # =======================================
 from flask import Flask
 import json
+import random
 
 
 app = Flask(__name__)
 
 buses = json.load(open('buses.json'))
+for b in buses:
+    b['time'] = random.randrange(10)
 
 @app.route("/distance")
 def distance_handler():
