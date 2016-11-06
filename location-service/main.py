@@ -7,21 +7,39 @@
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
 from flask import Flask
+import json
+
+
 app = Flask(__name__)
 
+buses = [
+    {
+        'id': 1,
+        'name': 'b1',
+        'time': 10
+    }
+]
 
 @app.route("/distance")
 def distance_handler():
     return 10
 
 
-@app.route("/buses")
-def buses_handler():
-    times = [10, 20]
-    result = ""
-    for time in times:
-        result = result + " " + str(time)
-    return result
+@app.route('/buses')
+def busese_hadler():
+    result = []
+    for b in buses:
+        result.append(b['id'])
+    return json.dumps(result)
+
+
+@app.route("/buses/<int:bus_id>")
+def buses_handler(bus_id):
+    result = {}
+    for b in buses:
+        if b['id'] == bus_id:
+            result = b
+    return json.dumps(result)
 
 
 if __name__ == "__main__":
