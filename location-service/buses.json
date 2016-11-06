@@ -2,12 +2,14 @@
     {
       "id": 1,
       "name": "b1",
-      "time": 10
+      "source": "Tajrish sq",
+      "destination": "Vanak sq"
     },
     {
       "id": 2,
       "name": "b2",
-      "time": 15
+      "source": "Valiasr sq",
+      "destination": "Talaghani st"
     }
 ]
 
