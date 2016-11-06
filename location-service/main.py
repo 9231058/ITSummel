@@ -12,13 +12,7 @@ import json
 
 app = Flask(__name__)
 
-buses = [
-    {
-        'id': 1,
-        'name': 'b1',
-        'time': 10
-    }
-]
+buses = json.load(open('buses.json'))
 
 @app.route("/distance")
 def distance_handler():
