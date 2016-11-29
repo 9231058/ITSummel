@@ -7,8 +7,8 @@ Story of our works in IoT Academy in [ITRC](http://itrc.ac.ir) at Summer 2016.
 [Windows 10 on RPi](http://lifehacker.com/get-started-with-windows-10-iot-on-the-raspberry-pi-wit-1733056763)
 ## RPi Pinout
 For detail of RPi pins and it's functionalities see [this](https://pinout.xyz/)
-## Examples :)
-### RPi Configuration
+
+## RPi Configuration
 For installing Lamp-RPi on RPi (Automated):
 
 - Donwload Raspbian [here](https://www.raspberrypi.org/downloads/raspbian/)
@@ -25,6 +25,12 @@ After installation if you want you can grow your partition size:
 - Run fsck on the partition. `sudo e2fsck /dev/mmcblk0p2`
 - Resize partition file system. `sudo resize2fs /dev/mmcblk0p2`
 
+## RPi NMap Finding
+```sh
+sudo nmap -sP subnet
+```
+
+## Examples :)
 ### DHT + Python
 For using DHT sensor with your RPi and python you must do the following things:
 1. Install GPIO library:
