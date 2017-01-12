@@ -15,13 +15,13 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Trun GPIO15 on
-GPIO.setup(15, GPIO.OUT)
+GPIO.setup(18, GPIO.OUT)
 try:
     while True:
-        GPIO.output(15, True)
+        GPIO.output(18, True)
         time.sleep(1)
-        GPIO.output(15, False)
+        GPIO.output(18, False)
         time.sleep(1)
 except KeyboardInterrupt:
-    GPIO.output(15, False)
+    GPIO.output(18, True)
     print("Thank you for using 18.20 :)")
