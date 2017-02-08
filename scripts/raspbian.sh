@@ -12,7 +12,7 @@ if [ -f raspbian-jessie.zip ]; then
 	read -p "Do you want to redownload raspbian ?[Y/n] " -n 1 redownload; echo
 	if [[ $redownload == "Y" ]]; then
 		download=true
-		rm rasbian-jessie.zip
+		rm raspbian-jessie.zip
 	else
 		download=false
 	fi
