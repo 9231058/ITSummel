@@ -23,7 +23,7 @@ For installing raspian on RPi (Automated):
 - Donwload Raspbian [here](https://www.raspberrypi.org/downloads/raspbian/)
 - Install Raspbian on SDcard with `unzip -p 2016-03-18-raspbian-jessie.zip | sudo dd of=/dev/mmcblk0 bs=32M`
 
-After installation if you want you can grow your partition size:
+After installation if you want you can grow root partition size:
 
 - Run `sudo fdisk /dev/mmcblk0`
 - Check the partition number you wish to delete with the p.
@@ -53,7 +53,7 @@ sudo apt-get install python-dev python-rpi.gpio
 
 2. Get dht11.py file and put it next to your project. You can download it form
 [here](https://github.com/szazo/DHT11_Python), after downloading zip file of
-this project use dht11.py and you remove other files.
+this project use dht11.py and remove other files.
 
 3. After all you can write your code :)
 
