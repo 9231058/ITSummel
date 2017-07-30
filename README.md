@@ -10,6 +10,7 @@ Story of our works in IoT Academy in [ITRC](http://itrc.ac.ir) at Summer 2016.
 - [Useful Fritzing Components](https://github.com/nkolban/fritzing)
 - [Windows 10 on RPi](http://lifehacker.com/get-started-with-windows-10-iot-on-the-raspberry-pi-wit-1733056763)
 - [Basic Usage of RPi GPIO](https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/)
+- [RPi GPIO](http://elinux.org/RPi_GPIO_Code_Samples)
 
 ## RPi Pinout
 
